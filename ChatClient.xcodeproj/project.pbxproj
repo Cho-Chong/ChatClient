@@ -10,6 +10,7 @@
 		DA54B7771C67E1BD00269632 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA54B7761C67E1BD00269632 /* main.cpp */; };
 		DA54B77F1C67E1E100269632 /* ChatClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA54B77D1C67E1E100269632 /* ChatClient.cpp */; };
 		DA54B7E91C67EE1400269632 /* libChatLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA54B7E81C67EE1400269632 /* libChatLib.a */; };
+		DAF3703C1E50EB3F00C030D1 /* ChatDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAF3703A1E50EB3F00C030D1 /* ChatDisplay.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		DA54B77D1C67E1E100269632 /* ChatClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChatClient.cpp; sourceTree = "<group>"; };
 		DA54B77E1C67E1E100269632 /* ChatClient.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ChatClient.hpp; sourceTree = "<group>"; };
 		DA54B7E81C67EE1400269632 /* libChatLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libChatLib.a; path = ../ChatLib/build/Debug/libChatLib.a; sourceTree = "<group>"; };
+		DAF3703A1E50EB3F00C030D1 /* ChatDisplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChatDisplay.cpp; sourceTree = "<group>"; };
+		DAF3703B1E50EB3F00C030D1 /* ChatDisplay.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ChatDisplay.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,8 @@
 				DA54B77D1C67E1E100269632 /* ChatClient.cpp */,
 				DA54B77E1C67E1E100269632 /* ChatClient.hpp */,
 				DA44C6601C8A71780026838E /* Threads.h */,
+				DAF3703A1E50EB3F00C030D1 /* ChatDisplay.cpp */,
+				DAF3703B1E50EB3F00C030D1 /* ChatDisplay.hpp */,
 			);
 			path = ChatClient;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 			files = (
 				DA54B77F1C67E1E100269632 /* ChatClient.cpp in Sources */,
 				DA54B7771C67E1BD00269632 /* main.cpp in Sources */,
+				DAF3703C1E50EB3F00C030D1 /* ChatDisplay.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,11 +12,13 @@
 #include <iostream>
 #include "Record.hpp"
 #include "Threads.h"
+#include "TcpDevice.h"
 
 #define USER_NAME ("Joe")
 
 static bool quit = false;
-static ChatClient client;
+static ChatLib::TcpDevice tcpDevice;
+static ChatClient client(&tcpDevice);
 static Model::User User;
 
 
@@ -41,7 +43,7 @@ void* UserInputThread(void *thread_id)
     do
     {
         std::cin >> message.Entry;
-        //TODO: get timestamp
+        //TODO: shouldn't the server set the timestamp?
         quit = (strcmp(message.Entry, "exit") == 0);
         
         if(!quit)

@@ -23,8 +23,9 @@
 #define HOST_NAME   ("127.0.0.1")
 #define MAXDATASIZE (100)
 
-ChatClient::ChatClient()
+ChatClient::ChatClient(ChatLib::Interface::IIODevice* iodevice)
 {
+    StreamPacketDriver = new ChatLib::PacketDriver(iodevice);
 }
 
 ChatClient::~ChatClient()
@@ -105,17 +106,17 @@ void ChatClient::QueueTransmit(const Model::Message& message)
 {
     ChatLib::PACKET_T packet;
     ChatLib::PacketWrapper::Wrap((char*) &message, sizeof(message), packet, message.GetType(), ChatLib::NODE_SERVER, ChatLib::NODE_CLIENT);
-    this->StreamPacketDriver.QueuePacket(this->socketfd, packet);
+    this->StreamPacketDriver->QueuePacket(this->socketfd, packet);
 }
 
 void ChatClient::Transmit()
 {
-    StreamPacketDriver.SendPackets(this->socketfd);
+    StreamPacketDriver->SendPackets(this->socketfd);
 }
 
 void ChatClient::Receive()
 {
-    StreamPacketDriver.RecvPacket(this->socketfd);
+    StreamPacketDriver->RecvPacket(this->socketfd);
 }
 
 //HACK: should not handle casting packets here
@@ -126,7 +127,11 @@ void ChatClient::Dequeue(const Model::User& user)
     
     do
     {
-        StreamPacketDriver.DequeuePacket(packet);
+        //TODO: need to somehow map an incoming message to a user
+        // option 1: ask the server for a user list
+        // option 2: have the user name in the message
+        // option 3: ask the server for the user
+        StreamPacketDriver->DequeuePacket(packet);
         
         if(packet.header.length > 0 && packet.header.dest == ChatLib::NODE_CLIENT && packet.header.type == ChatLib::TYPE_MESSAGE)
         {

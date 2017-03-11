@@ -20,6 +20,20 @@
                ReferencedContainer = "container:ChatClient.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DA54B75C1C67D20400269632"
+               BuildableName = "Chat"
+               BlueprintName = "Chat"
+               ReferencedContainer = "container:../Chat/Chat.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -32,10 +46,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DA54B7721C67E1BD00269632"
-            BuildableName = "ChatClient"
-            BlueprintName = "ChatClient"
-            ReferencedContainer = "container:ChatClient.xcodeproj">
+            BlueprintIdentifier = "DA54B75C1C67D20400269632"
+            BuildableName = "Chat"
+            BlueprintName = "Chat"
+            ReferencedContainer = "container:../Chat/Chat.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>

@@ -16,7 +16,7 @@
 class ChatClient
 {
 public:
-    ChatClient();
+    ChatClient(ChatLib::Interface::IIODevice* iodevice);
     ~ChatClient();
     
     int Connect();
@@ -28,7 +28,7 @@ public:
 private:
     
     void *get_in_addr(struct sockaddr *sa);
-    ChatLib::PacketDriver StreamPacketDriver;
+    ChatLib::PacketDriver* StreamPacketDriver;
     int socketfd;
 };
 
